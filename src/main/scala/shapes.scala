@@ -6,4 +6,4 @@ enum Shape derives CanEqual:
   case Ellipse(width: Int, height: Int)
   case Location(x: Int, y: Int, shape: Shape)
   case Group(shapes: Shape*)
-  
+

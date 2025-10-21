@@ -12,7 +12,7 @@ object boundingBox:
       val boxes = g.shapes.map(apply)
       // accounting for length of shapes in ascertaining bottom-right
       // not pretty but removes need for var; seek corner of object w/ max x, then resolve from x+w
-      val max_x_corner = boxes.maxBy { box => box.x + box.shape.asInstanceOf[Rectangle].width } 
+      val max_x_corner = boxes.maxBy { box => box.x + box.shape.asInstanceOf[Rectangle].width }
       val max_x = max_x_corner.x + max_x_corner.shape.asInstanceOf[Rectangle].width
       // seek corner of object w/ max y, then resolve from y+h
       val max_y_corner = boxes.maxBy { box => box.y + box.shape.asInstanceOf[Rectangle].height }
@@ -24,7 +24,7 @@ object boundingBox:
 
       val w = max_x - min_x
       val h = max_y - min_y
-      Location(min_x, min_y, new Rectangle(w, h))
+      Location(min_x, min_y, Rectangle(w, h))
     case _ => Location(0, 0, Rectangle(0, 0)) // not yet implemented
 
 end boundingBox

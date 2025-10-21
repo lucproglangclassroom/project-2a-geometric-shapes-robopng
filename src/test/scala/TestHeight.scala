@@ -7,7 +7,8 @@ import Shape.*
 
 class TestHeight extends AnyFunSuite:
   def testHeight(description: String, s: Shape, target: Int): Unit =
-    assert(height(s) == target) : Unit  // discard silently
+    test(description):
+      assert(height(s) == target) : Unit  // discard silently
 
   testHeight("simple ellipse", simpleEllipse, 1)
   testHeight("simple rectangle", simpleRectangle, 1)
